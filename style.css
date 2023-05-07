@@ -156,10 +156,11 @@ text-align: left;
 	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 	object-fit: cover;
 	transition: filter,transform .5s;
-}picture:hover img{
+}.img-container picture:hover img{
 filter: grayscale(100%);
-}picture:hover img{
 transform: scale(.95);
+
+}picture:hover img{
 }figcaption{
 	position: absolute;
 	left: 5%;
