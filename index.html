@@ -18,6 +18,9 @@
  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div role="loader" loading="eager">
+  <img src="images/loader-2.gif" alt="a loading img">
+</div>
 <header>
     <div id="nav-with-title-container"> 
         <div id="title-and-burger-menuBtnContainer">
@@ -37,8 +40,8 @@
     
     <div role="banner">
       <picture  loading="lazy">
-            <source media="(max-width:390px)" srcset="images/mobile/image-hero.jpg">
-            <source media="(min-width:391px)" srcset="images/desktop/image-hero.jpg">
+            <source  loading="lazy" media="(max-width:390px)" srcset="images/mobile/image-hero.jpg">
+            <source  loading="lazy" media="(min-width:391px)" srcset="images/desktop/image-hero.jpg">
             <img src="images/mobile/image-hero.jpg">
       </picture>
         <h2>Immersive<br> experiences <br>that deliver</h2>
@@ -47,8 +50,8 @@
 <main>
   <section id="about">
     <picture  loading="lazy">
-        <source  media="(max-width:390px)" srcset="images/mobile/image-interactive.jpg">
-        <source media="(min-width:391px)" srcset="images/desktop/image-interactive.jpg" >
+        <source  loading="lazy"  media="(max-width:390px)" srcset="images/mobile/image-interactive.jpg">
+        <source  loading="lazy" media="(min-width:391px)" srcset="images/desktop/image-interactive.jpg" >
         <img src="images/desktop/image-interactive.jpg">
     </picture>
     <div id="about-info">
@@ -64,20 +67,20 @@
         <h2>OUR CREATIONS</h2>
         <button id="see-all-button">SEE ALL</button>
     </div> 
-    <!-- <div> -->
+    <!-- <div> -->-
     <div class="img-container">
           <figure>
-            <picture loading="lazy">
-                <source media="(max-width:749px)" srcset="images/mobile/image-deep-earth.jpg">
-                <source media="(min-width:750px)" srcset="images/desktop/image-deep-earth.jpg">
+            <picture>
+                <source  loading="lazy" media="(max-width:749px)" srcset="images/mobile/image-deep-earth.jpg">
+                <source  loading="lazy" media="(min-width:750px)" srcset="images/desktop/image-deep-earth.jpg">
                 <img src="images/desktop/image-deep-earth.jpg">
             </picture>
              <figcaption>  Deep <br>earth </figcaption>
           </figure>
           <figure>
-            <picture  loading="lazy">
-                <source media="(max-width:749px)" srcset="images/mobile/image-night-arcade.jpg">
-                <source media="(min-width:750px)" srcset="images/desktop/image-night-arcade.jpg">
+            <picture  >
+                <source  loading="lazy" media="(max-width:749px)" srcset="images/mobile/image-night-arcade.jpg">
+                <source  loading="lazy" media="(min-width:750px)" srcset="images/desktop/image-night-arcade.jpg">
                 <img src="images/desktop/image-deep-earth.jpg">
             </picture>
              <figcaption>  Night<br> arcade </figcaption>
@@ -85,8 +88,8 @@
           <!-- <img src="images/mobile/image-night-arcade.jpg"> -->
           <figure>
             <picture  loading="lazy">
-                <source media="(max-width:749px)" srcset="images/mobile/image-soccer-team.jpg">
-                <source media="(min-width:750px)" srcset="images/desktop/image-soccer-team.jpg">
+                <source  loading="lazy" media="(max-width:749px)" srcset="images/mobile/image-soccer-team.jpg">
+                <source  loading="lazy" media="(min-width:750px)" srcset="images/desktop/image-soccer-team.jpg">
                 <img src="images/desktop/image-deep-earth.jpg">
             </picture>
              <figcaption>  Soccer<br> team VR </figcaption>
@@ -94,8 +97,8 @@
           <!-- <img src="images/mobile/image-soccer-team.jpg"> -->
            <figure>
             <picture  loading="lazy">
-                <source media="(max-width:749px)" srcset="images/mobile/image-grid.jpg">
-                <source media="(min-width:750px)" srcset="images/desktop/image-grid.jpg">
+                <source  loading="lazy" media="(max-width:749px)" srcset="images/mobile/image-grid.jpg">
+                <source  loading="lazy" media="(min-width:750px)" srcset="images/desktop/image-grid.jpg">
                 <img src="images/desktop/image-deep-earth.jpg">
             </picture>
              <figcaption>   The<br> grid </figcaption>
@@ -103,35 +106,35 @@
           <!-- <img src="images/mobile/image-grid.jpg"> -->
            <figure>
             <picture  loading="lazy">
-                <source media="(max-width:749px)" srcset="images/mobile/image-from-above.jpg">
-                <source media="(min-width:750px)" srcset="images/desktop/image-from-above.jpg">
+                <source  loading="lazy" media="(max-width:749px)" srcset="images/mobile/image-from-above.jpg">
+                <source  loading="lazy" media="(min-width:750px)" srcset="images/desktop/image-from-above.jpg">
                 <img src="images/desktop/image-deep-earth.jpg">
             </picture>
              <figcaption> From up<br> above VR </figcaption>
           </figure>
           <!-- <img src="images/mobile/image-from-above.jpg"> -->
            <figure>
-            <picture  loading="lazy">
-                <source media="(max-width:749px)" srcset="images/mobile/image-pocket-borealis.jpg">
-                <source media="(min-width:750px)" srcset="images/desktop/image-pocket-borealis.jpg">
+            <picture >
+                <source  loading="lazy" media="(max-width:749px)" srcset="images/mobile/image-pocket-borealis.jpg">
+                <source  loading="lazy" media="(min-width:750px)" srcset="images/desktop/image-pocket-borealis.jpg">
                 <img src="images/desktop/image-pocket-borealis.jpg">
             </picture>
              <figcaption>   Pocket <br>borealis </figcaption>
           </figure>
           <!-- <img src="images/mobile/image-pocket-borealis.jpg"> -->
             <figure>
-            <picture  loading="lazy">
-                <source media="(max-width:749px)" srcset="images/mobile/image-curiosity.jpg">
-                <source media="(min-width:750px)" srcset="images/desktop/image-curiosity.jpg">
+            <picture >
+                <source  loading="lazy" media="(max-width:749px)" srcset="images/mobile/image-curiosity.jpg">
+                <source  loading="lazy" media="(min-width:750px)" srcset="images/desktop/image-curiosity.jpg">
                 <img src="images/desktop/image-curiosity.jpg">
             </picture>
              <figcaption>    The <br>curiosity  </figcaption>
           </figure>
           <!-- <img src="images/mobile/image-curiosity.jpg"> -->
             <figure>
-            <picture  loading="lazy">
-                <source media="(max-width:749px)" srcset="images/mobile/image-fisheye.jpg">
-                <source media="(min-width:750px)" srcset="images/desktop/image-fisheye.jpg">
+            <picture >
+                <source  loading="lazy" media="(max-width:749px)" srcset="images/mobile/image-fisheye.jpg">
+                <source  loading="lazy" media="(min-width:750px)" srcset="images/desktop/image-fisheye.jpg">
                 <img src="images/desktop/image-fisheye.jpg">
             </picture>
              <figcaption>   Make it <br>fisheye </figcaption>
@@ -200,11 +203,6 @@
   </div> -->
 </body>
 <script type="text/javascript">
-  const arr = ["Dd","dd"]
-  for(const item of arr.entries()){
-       console.log(item[0],item[1])
-  }
-  const array = [1,2,3,4,5,67,6,5,6,7,4,4,5,6,7,5,4,4,5,6,6,4,3,2,34,5,6]
-  console.log(array.reduce((acc,item)=> acc+item,4))
+window.addEventListener("load",()=>document.querySelector("[role='loader']").style.display = "none")
 </script>
 </html>

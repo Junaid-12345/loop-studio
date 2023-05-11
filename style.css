@@ -15,7 +15,23 @@ body{
 font-family: 'Josefin Sans', sans-serif;
 min-height: 100vh;
 font-size: 20px;
+position: relative;
 /*font-family: 'Alata', sans-serif;*/
+}[role="loader"]{
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+[role="loader"] img{
+	width: 30%;
+	min-width: 200px;
 }
 header{
 	/*border:1px solid red;*/
