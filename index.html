@@ -18,6 +18,7 @@
  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div role="overlay"></div>
 <div role="loader" loading="eager">
   <img src="images/loader-2.gif" alt="a loading img">
 </div>
@@ -29,12 +30,15 @@
         </div>
         <nav>
            <ul>
-             <li><a>About</a></li>
-              <li><a>Careers</a></li>
-              <li><a>Events</a></li>
-              <li><a>Products</a></li>
-              <li><a>Support</a></li>
+            <button id="close-menuBtn" >&times;</button>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Support</a></li>
+              <span class="activeAnime"></span>
           </ul>
+          <!-- <div id="overlay-for-nav"></div> -->
         </nav>
     </div>
     
@@ -67,7 +71,7 @@
         <h2>OUR CREATIONS</h2>
         <button id="see-all-button">SEE ALL</button>
     </div> 
-    <!-- <div> -->-
+    <!-- <div> -->
     <div class="img-container">
           <figure>
             <picture>
@@ -151,21 +155,23 @@
         <p class="site-title">Loopstudios</p>
         <div>
             <ul>
-                 <li><a>About</a></li>
-                  <li><a>Careers</a></li>
-                  <li><a>Events</a></li>
-                  <li><a>Products</a></li>
-                  <li><a>Support</a></li>
+                 <li><a href="#">About</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Products</a></li>
+                  <li><a href="#">Support</a></li>
+                  <!-- <span class="activeAnime"></span> -->
+ 
               </ul>
         </div>
     </div>
     <div>
       <div class="footer-section">
         <div class="social-images-container">
-            <img src="images/icon-facebook.svg">
-            <img src="images/icon-twitter.svg">
-            <img src="images/icon-pinterest.svg">
-            <img src="images/icon-instagram.svg">
+            <a href="#"><img src="images/icon-facebook.svg"></a>
+            <a href="#"><img src="images/icon-twitter.svg"></a>
+            <a href="#"><img src="images/icon-pinterest.svg"></a>
+            <a href="#"><img src="images/icon-instagram.svg"></a>
          </div>
         <small style="color:grey"> © 2021 Loopstudios. All rights reserved.</small>
       </div>
@@ -202,7 +208,59 @@
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
 </body>
+</html>
 <script type="text/javascript">
 window.addEventListener("load",()=>document.querySelector("[role='loader']").style.display = "none")
+const nav_with_title_containerInDOM = document.getElementById("nav-with-title-container")
+const overlayElementInDOM = document.querySelector("[role= 'overlay']")
+//----------------------Nav Toggle Display-----------------------------------------------------
+document.querySelector("#burger-menu-btn").addEventListener("click",()=>{
+  nav_with_title_containerInDOM.querySelector("nav").classList.add("show-nav-for-mobile")
+  overlayElementInDOM.style.display = "block"
+})
+document.querySelector("#close-menuBtn").addEventListener("click",()=>{
+  nav_with_title_containerInDOM.querySelector("nav").classList.remove("show-nav-for-mobile")
+  overlayElementInDOM.style.display = "none"
+
+})
+//--------------------------------------------------------------------------------------------
+// --------------------- Nav anime --------------------------------------------------------
+const activeAnime =  document.querySelector(".activeAnime")
+const header_Li_InDOM = document.querySelectorAll("header li")
+activeAnime.style.width = `${document.querySelectorAll("header li")[0].offsetWidth}px`
+const animeFunction = function (eventObj) {
+   activeAnime.style.left = `${eventObj.target.offsetLeft }px`
+   activeAnime.style.width = `${eventObj.target.offsetWidth}px`
+  
+} 
+const toggleAnimeFuncOnResize = ()=> {
+  if (document.body.offsetWidth > 750) {
+  header_Li_InDOM.forEach(item=>item.addEventListener("click",animeFunction)) 
+  }else{
+  header_Li_InDOM.forEach(item=>item.removeEventListener("click",animeFunction)) 
+  }
+}
+toggleAnimeFuncOnResize()
+window.onresize = toggleAnimeFuncOnResize
+const media = window.matchMedia("screen and (min-width: 750px)")
+media.addEventListener("change",(e)=>{
+  if (e.matches) {
+   nav_with_title_containerInDOM.querySelector("nav").classList.remove("show-nav-for-mobile")
+    overlayElementInDOM.style.display = "none" 
+  }
+  
+})
+//-----------------------------------------------------------------------------------------
+//----------------------Intersection Observer Anime ----------------------------------------
+const IntersectionObserverObjectGenerator = function (animationName) {
+  return new IntersectionObserver((item)=>item.at(0).target.classList.toggle(animationName,item.at(0).isIntersecting))
+}
+const sectionImg = document.querySelector("section img") 
+const container = document.querySelector("#about-info")
+const banner = document.querySelector("[role='banner'] h2")
+IntersectionObserverObjectGenerator("slideup-anime").observe(banner)
+IntersectionObserverObjectGenerator("slideright-anime").observe(container)
+IntersectionObserverObjectGenerator("slideleft-anime").observe(sectionImg)
+
 </script>
 </html>
