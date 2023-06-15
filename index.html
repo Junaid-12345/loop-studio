@@ -19,8 +19,8 @@
 </head>
 <body>
 <div role="overlay"></div>
-<div role="loader" loading="eager">
-  <img src="images/loader-2.gif" alt="a loading img">
+<div role="loader">
+  <img src="images/loader-2.gif" fetchpriority="high" loading="eager" alt="a loading img">
 </div>
 <header>
     <div id="nav-with-title-container"> 
@@ -218,11 +218,12 @@ document.querySelector("#burger-menu-btn").addEventListener("click",()=>{
   nav_with_title_containerInDOM.querySelector("nav").classList.add("show-nav-for-mobile")
   overlayElementInDOM.style.display = "block"
 })
-document.querySelector("#close-menuBtn").addEventListener("click",()=>{
-  nav_with_title_containerInDOM.querySelector("nav").classList.remove("show-nav-for-mobile")
+const hideNavForMobileInDom = function () {
+ nav_with_title_containerInDOM.querySelector("nav").classList.remove("show-nav-for-mobile")
   overlayElementInDOM.style.display = "none"
-
-})
+}
+document.querySelector("#close-menuBtn").addEventListener("click",hideNavForMobileInDom)
+overlayElementInDOM.addEventListener("click",hideNavForMobileInDom)
 //--------------------------------------------------------------------------------------------
 // --------------------- Nav anime --------------------------------------------------------
 const activeAnime =  document.querySelector(".activeAnime")

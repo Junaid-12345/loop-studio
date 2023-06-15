@@ -112,12 +112,15 @@ width: 100%;
 	display: grid;
 	color: grey;
 	place-items:center;
-	animation: slideLeft .5s;
+	/*animation: slideLeft .5s cubic-bezier(0.25, 0.1, 0, 1.36);*/
+	animation: slideLeft .5s cubic-bezier(0.65, 0.63, 0, 1.43);
 	animation-fill-mode: forwards;
 	height: 100vh;
 	background-color: #212121;
-}.show-nav-for-mobile a:hover{
-color: white;
+}.show-nav-for-mobile a{
+	transition: 1s color;
+	}.show-nav-for-mobile a:hover{
+	color: white;
 	}@keyframes slideLeft{
 	from{
 		width: 0;
